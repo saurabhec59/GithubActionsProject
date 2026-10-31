@@ -23,4 +23,4 @@ jobs:
           distribution: 'temurin'
 
       - name: compile code
-        run: .mvnw clean install
+        run: ./mvnw clean install
