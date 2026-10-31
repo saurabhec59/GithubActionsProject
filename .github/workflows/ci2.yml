@@ -1,0 +1,26 @@
+name: CI2
+on:
+  push:
+    branches:
+      - main
+      - development
+
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  compile:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout repo code
+        uses: actions/checkout@v4
+
+      - name: Set up java 21
+        uses: actions/setup-java@v4
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+
+      - name: compile code
+        run: .mvnw clean install
