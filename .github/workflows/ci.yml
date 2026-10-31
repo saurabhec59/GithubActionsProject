@@ -1,0 +1,20 @@
+name: learning CI
+
+on:
+  push:
+    branches:
+      - development
+      - main
+
+  pull_request:
+    branches:
+      - main
+jobs:
+  say-hello:
+    runs-on: ubuntu-latest
+    steps:
+      - name: saying hello
+        run: echo "Hello, development"
+
+      - name: closing ci
+        run: echo "CI completed successfully"
